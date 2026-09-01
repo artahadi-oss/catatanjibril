@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CATATAN JIBRIL : Perbuatan Baikku Hari Ini</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF6B6B;
+            --secondary: #4ECDC4;
+            --accent: #FFE66D;
+            --purple: #A8DADC;
+            --dark: #2C3E50;
+            --card-bg: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #a88beb 0%, #F8FFAE 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            padding: 20px;
+            color: var(--dark);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: white;
+            padding: 25px;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+            border: 4px solid #FF9F43;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header h1 {
+            font-family: 'Fredoka One', cursive;
+            color: #FF5252;
+            font-size: 2.2rem;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 0px #FFE66D;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #5f27cd;
+            font-weight: 700;
+        }
+
+        .top-decor {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            border: 3px solid #EE5253;
+        }
+
+        .card-header-title {
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.4rem;
+            color: #2e86de;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px dashed #c8d6e5;
+            padding-bottom: 10px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        label {
+            font-weight: 700;
+            color: #341f97;
+            font-size: 0.95rem;
+        }
+
+        select, input[type="date"], input[type="text"], textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #c8d6e5;
+            border-radius: 12px;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+            background-color: #f8f9fa;
+        }
+
+        select:focus, input:focus, textarea:focus {
+            border-color: #FF9F43;
+            background-color: #fff;
+            box-shadow: 0 0 8px rgba(255, 159, 67, 0.4);
+        }
+
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+        }
+
+        .check-item {
+            background: #f1f2f6;
+            border: 2px solid #dfe4ea;
+            border-radius: 16px;
+            padding: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+
+        .check-item:hover {
+            transform: translateY(-2px);
+            background: #e4e7eb;
+        }
+
+        .check-item input[type="checkbox"] {
+            width: 22px;
+            height: 22px;
+            accent-color: #10ac84;
+            cursor: pointer;
+        }
+
+        .check-item.active {
+            background: #d4edda;
+            border-color: #28a745;
+            color: #155724;
+            font-weight: bold;
+        }
+
+        .check-item .icon {
+            font-size: 1.5rem;
+        }
+
+        .btn-submit {
+            background: linear-gradient(45deg, #10ac84, #1dd1a1);
+            color: white;
+            border: none;
+            padding: 16px 30px;
+            font-size: 1.3rem;
+            font-family: 'Fredoka One', cursive;
+            border-radius: 50px;
+            cursor: pointer;
+            width: 100%;
+            box-shadow: 0 6px 0px #10ac84, 0 10px 20px rgba(0,0,0,0.15);
+            transition: all 0.2s ease;
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 0px #10ac84, 0 12px 22px rgba(0,0,0,0.2);
+        }
+
+        .btn-submit:active {
+            transform: translateY(4px);
+            box-shadow: 0 2px 0px #10ac84;
+        }
+
+        .recap-section {
+            margin-top: 30px;
+        }
+
+        .recap-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-left: 6px solid #FF9F43;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .recap-info h4 {
+            color: #2e86de;
+            font-size: 1.1rem;
+        }
+
+        .recap-info p {
+            font-size: 0.85rem;
+            color: #8395a7;
+        }
+
+        .badge {
+            background: #ee5253;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .badge-count {
+            background: #10ac84;
+        }
+
+        .btn-delete {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .star-reward {
+            font-size: 1.8rem;
+            animation: bounce 1s infinite alternate;
+        }
+
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-5px); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="top-decor">🌟 📖 🤲 🌟</div>
+        <h1>CATATAN JIBRIL</h1>
+        <p>✨ Perbuatan Baikku Hari Ini ✨</p>
+    </header>
+
+    <form id="jibrilForm">
+        <!-- IDENTITAS -->
+        <div class="card" style="border-color: #48dbfb;">
+            <div class="card-header-title">
+                <span>👤</span> Data Anak & Pendamping
+            </div>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="tanggal">📅 Hari / Tanggal:</label>
+                    <input type="date" id="tanggal" required>
+                </div>
+                <div class="form-group">
+                    <label for="namaAnak">👶 Nama Anak (Siswa):</label>
+                    <select id="namaAnak" required>
+                        <option value="">-- Pilih Nama Anak --</option>
+                        <option value="ABDULLAH ALFARISKY">ABDULLAH ALFARISKY</option><option value="AFNAN ZABIR PUTRA RUNA">AFNAN ZABIR PUTRA RUNA</option><option value="AKSYA DAFA PERMANA">AKSYA DAFA PERMANA</option><option value="ANNASYA ADREENA SAILA">ANNASYA ADREENA SAILA</option><option value="ANNINDITA KEISHA ALMAHYRA">ANNINDITA KEISHA ALMAHYRA</option><option value="ARYA DWI SAPUTRA">ARYA DWI SAPUTRA</option><option value="ASLAN NURDIANSYAH ANANDHI">ASLAN NURDIANSYAH ANANDHI</option><option value="AYYUB AL HATIM">AYYUB AL HATIM</option><option value="AZIZTA NAHLA KHOIRUNNISA">AZIZTA NAHLA KHOIRUNNISA</option><option value="CHAYRA ADZRA RASHAFAH">CHAYRA ADZRA RASHAFAH</option><option value="CLARISTA PUTRI FITRIANI">CLARISTA PUTRI FITRIANI</option><option value="DANNIZA ALBIGHANI TRIESTIAN">DANNIZA ALBIGHANI TRIESTIAN</option><option value="DHEFINDRA ALFARIZQI SUBAGIYO">DHEFINDRA ALFARIZQI SUBAGIYO</option><option value="FRIAN APRILIO JATI SUSANTO">FRIAN APRILIO JATI SUSANTO</option><option value="HASBI ALFARIZKI">HASBI ALFARIZKI</option><option value="KEISHA PUTRI ALMAYRA">KEISHA PUTRI ALMAYRA</option><option value="MUHAMMAD HAIDAR">MUHAMMAD HAIDAR</option><option value="NADIA AZZAHRA ALFATHUNNISA">NADIA AZZAHRA ALFATHUNNISA</option><option value="NADYA ALIYANA SHAIMA">NADYA ALIYANA SHAIMA</option><option value="NIRMALA SALSABILA">NIRMALA SALSABILA</option><option value="PRAVIS IZYAN DIRANDRA">PRAVIS IZYAN DIRANDRA</option><option value="PUTRI ANJELA ASYURA">PUTRI ANJELA ASYURA</option><option value="QUINSHA APRILLIA RAHMADHANI">QUINSHA APRILLIA RAHMADHANI</option><option value="RAFID ZHAFAR PRASTIYO">RAFID ZHAFAR PRASTIYO</option><option value="RAFKA FIAN SWASTIKA">RAFKA FIAN SWASTIKA</option><option value="RAHVANA JAGAD RINESTU">RAHVANA JAGAD RINESTU</option><option value="RAIHANAH">RAIHANAH</option><option value="RANIA ALISHA HARDIANTI">RANIA ALISHA HARDIANTI</option><option value="RASYA ATHAYA ALFARIZI">RASYA ATHAYA ALFARIZI</option><option value="SAMADYA SHADA SULTHANAH">SAMADYA SHADA SULTHANAH</option><option value="VINA DWI SAPUTRI">VINA DWI SAPUTRI</option><option value="VISHAKA NADHIFA PRAMUDANA">VISHAKA NADHIFA PRAMUDANA</option><option value="ZELINE SHAQUILLA AQUEENSYA">ZELINE SHAQUILLA AQUEENSYA</option><option value="ARGA ALVINO PRATAMA">ARGA ALVINO PRATAMA</option><option value="PUTRA SETIA WICAKSONO">PUTRA SETIA WICAKSONO</option><option value="ALSAKI NUR ARSYANENDRA ARDINNAT">ALSAKI NUR ARSYANENDRA ARDINNAT</option><option value="FAHMI ABDAD NUDIANSYAH">FAHMI ABDAD NUDIANSYAH</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="pendamping">👨‍🏫 Guru / Pendamping:</label>
+                    <select id="pendamping" required>
+                        <option value="">-- Pilih Penilai / Pendamping --</option>
+                        <option value="Arwanto H.S.">Arwanto H.S.</option><option value="Isti Purwaningsih">Isti Purwaningsih</option><option value="Yulia Indah H.">Yulia Indah H.</option><option value="Tri Kusumarani">Tri Kusumarani</option><option value="Lina Ernawati">Lina Ernawati</option><option value="Orangtua / Wali">Orangtua / Wali</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- 1. SHOLAT -->
+        <div class="card" style="border-color: #FF9F43;">
+            <div class="card-header-title">
+                <span>🕌</span> 1. Sholat 5 Waktu
+            </div>
+            <div class="checklist-grid">
+                <label class="check-item">
+                    <input type="checkbox" name="sholat" value="Subuh">
+                    <span class="icon">🌅</span> Subuh
+                </label>
+                <label class="check-item">
+                    <input type="checkbox" name="sholat" value="Dhuhur">
+                    <span class="icon">☀️</span> Dhuhur
+                </label>
+                <label class="check-item">
+                    <input type="checkbox" name="sholat" value="Ashar">
+                    <span class="icon">🌤️</span> Ashar
+                </label>
+                <label class="check-item">
+                    <input type="checkbox" name="sholat" value="Magrib">
+                    <span class="icon">🌆</span> Magrib
+                </label>
+                <label class="check-item">
+                    <input type="checkbox" name="sholat" value="Isya'">
+                    <span class="icon">🌙</span> Isya'
+                </label>
+            </div>
+        </div>
+
+        <!-- 2. KEMANDIRIAN -->
+        <div class="card" style="border-color: #1dd1a1;">
+            <div class="card-header-title">
+                <span>🎒</span> 2. Kemandirian
+            </div>
+            <div class="checklist-grid">
+                <label class="check-item">
+                    <input type="checkbox" name="mandiri" value="Mandi sendiri">
+                    <span class="icon">🚿</span> Mandi sendiri
+                </label>
+                <label class="check-item">
+                    <input type="checkbox" name="mandiri" value="Makan sendiri">
+                    <span class="icon">🍽️</span> Makan sendiri
+                </label>
+                <label class="check-item">
+                    <input type="checkbox" name="mandiri" value="Mencuci gelas/piring">
+                    <span class="icon">🧼</span> Mencuci gelas/piring
+                </label>
+                <label class="check-item">
+                    <input type="checkbox" name="mandiri" value="Menyapu">
+                    <span class="icon">🧹</span> Menyapu
+                </label>
+                <label class="check-item">
+                    <input type="checkbox" name="mandiri" value="Membereskan tempat tidur">
+                    <span class="icon">🪟</span> Membereskan tempat tidur
+                </label>
+                <label class="check-item">
+                    <input type="checkbox" name="mandiri" value="Belajar">
+                    <span class="icon">✏️</span> Belajar
+                </label>
+                <label class="check-item">
+                    <input type="checkbox" name="mandiri" value="Memakai baju sendiri">
+                    <span class="icon">👕</span> Memakai baju sendiri
+                </label>
+            </div>
+        </div>
+
+        <!-- 3. JIWA SOSIAL -->
+        <div class="card" style="border-color: #f368e0;">
+            <div class="card-header-title">
+                <span>🤝</span> 3. Jiwa Sosial
+            </div>
+            <div class="checklist-grid">
+                <label class="check-item">
+                    <input type="checkbox" name="sosial" value="Menolong teman">
+                    <span class="icon">🦸</span> Menolong teman
+                </label>
+                <label class="check-item">
+                    <input type="checkbox" name="sosial" value="Berbagi mainan">
+                    <span class="icon">🧸</span> Berbagi mainan
+                </label>
+                <label class="check-item">
+                    <input type="checkbox" name="sosial" value="Meminta & memberi maaf">
+                    <span class="icon">🕊️</span> Meminta & memberi maaf
+                </label>
+                <label class="check-item">
+                    <input type="checkbox" name="sosial" value="Mengucap salam">
+                    <span class="icon">👋</span> Mengucap salam
+                </label>
+            </div>
+        </div>
+
+        <!-- 4. MENGHORMATI ORANG TUA -->
+        <div class="card" style="border-color: #ff6b6b;">
+            <div class="card-header-title">
+                <span>❤️</span> 4. Menghormati Orang Tua
+            </div>
+            <div class="checklist-grid">
+                <label class="check-item" style="grid-column: 1 / -1;">
+                    <input type="checkbox" name="hormat" value="Menghormati Orang Tua (Patuh, Bicara Sopan, & Membantu)">
+                    <span class="icon">👨‍👩‍👧‍👦</span> Menghormati & Patuh Kepada Orang Tua Hari Ini
+                </label>
+            </div>
+        </div>
+
+        <!-- SIMPAN BUTTON -->
+        <button type="submit" class="btn-submit">🌟 SIMPAN CATATAN KEBAIKAN 🌟</button>
+    </form>
+
+    <!-- REKAPITULASI -->
+    <div class="recap-section">
+        <div class="card" style="border-color: #5f27cd;">
+            <div class="card-header-title" style="justify-content: space-between;">
+                <span>📋 Data Kebaikan Tersimpan</span>
+                <span class="badge badge-count" id="totalCount">0 Catatan</span>
+            </div>
+            <div id="recapList">
+                <p style="text-align: center; color: #8395a7; padding: 20px;">Belum ada data kebaikan yang dicatat hari ini.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Set default date to today
+    document.getElementById('tanggal').valueAsDate = new Date();
+
+    // Toggle active style on checkbox check
+    document.querySelectorAll('.check-item input').forEach(input => {
+        input.addEventListener('change', function() {
+            if(this.checked) {
+                this.parentElement.classList.add('active');
+            } else {
+                this.parentElement.classList.remove('active');
+            }
+        });
+    });
+
+    const form = document.getElementById('jibrilForm');
+    const recapList = document.getElementById('recapList');
+    const totalCount = document.getElementById('totalCount');
+
+    // Load data from localStorage
+    function loadRecords() {
+        const records = JSON.parse(localStorage.getItem('catatan_jibril_data')) || [];
+        totalCount.textContent = `${records.length} Catatan`;
+
+        if (records.length === 0) {
+            recapList.innerHTML = '<p style="text-align: center; color: #8395a7; padding: 20px;">Belum ada data kebaikan yang dicatat.</p>';
+            return;
+        }
+
+        recapList.innerHTML = '';
+        records.forEach((record, index) => {
+            const card = document.createElement('div');
+            card.className = 'recap-card';
+            
+            const countGood = record.sholat.length + record.mandiri.length + record.sosial.length + (record.hormat ? 1 : 0);
+            
+            card.innerHTML = `
+                <div class="recap-info">
+                    <h4>⭐ ${record.namaAnak}</h4>
+                    <p><strong>Tanggal:</strong> ${record.tanggal} | <strong>Pendamping:</strong> ${record.pendamping}</p>
+                    <p style="margin-top: 5px;">
+                        <strong>Sholat:</strong> ${record.sholat.join(', ') || '-'}<br>
+                        <strong>Kemandirian:</strong> ${record.mandiri.join(', ') || '-'}<br>
+                        <strong>Jiwa Sosial:</strong> ${record.sosial.join(', ') || '-'}<br>
+                        <strong>Hormat Ortu:</strong> ${record.hormat ? 'Ya ✅' : 'Tidak'}
+                    </p>
+                </div>
+                <div style="text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 8px;">
+                    <span class="badge" style="background: #10ac84;">🏆 ${countGood} Kebaikan</span>
+                    <button class="btn-delete" onclick="deleteRecord(${index})">Hapus</button>
+                </div>
+            `;
+            recapList.appendChild(card);
+        });
+    }
+
+    // Save record
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const sholatChecked = Array.from(document.querySelectorAll('input[name="sholat"]:checked')).map(el => el.value);
+        const mandiriChecked = Array.from(document.querySelectorAll('input[name="mandiri"]:checked')).map(el => el.value);
+        const sosialChecked = Array.from(document.querySelectorAll('input[name="sosial"]:checked')).map(el => el.value);
+        const hormatChecked = document.querySelector('input[name="hormat"]:checked') !== null;
+
+        const newRecord = {
+            tanggal: document.getElementById('tanggal').value,
+            namaAnak: document.getElementById('namaAnak').value,
+            pendamping: document.getElementById('pendamping').value,
+            sholat: sholatChecked,
+            mandiri: mandiriChecked,
+            sosial: sosialChecked,
+            hormat: hormatChecked,
+            timestamp: new Date().getTime()
+        };
+
+        const records = JSON.parse(localStorage.getItem('catatan_jibril_data')) || [];
+        records.unshift(newRecord);
+        localStorage.setItem('catatan_jibril_data', JSON.stringify(records));
+
+        // Reset form controls
+        form.reset();
+        document.querySelectorAll('.check-item').forEach(el => el.classList.remove('active'));
+        document.getElementById('tanggal').valueAsDate = new Date();
+
+        alert('🌟 Masya Allah! Catatan kebaikan berhasil disimpan.');
+        loadRecords();
+    });
+
+    // Delete record
+    function deleteRecord(index) {
+        if (confirm('Apakah Anda yakin ingin menghapus catatan kebaikan ini?')) {
+            const records = JSON.parse(localStorage.getItem('catatan_jibril_data')) || [];
+            records.splice(index, 1);
+            localStorage.setItem('catatan_jibril_data', JSON.stringify(records));
+            loadRecords();
+        }
+    }
+
+    // Initial load
+    loadRecords();
+</script>
+
+</body>
+</html>
