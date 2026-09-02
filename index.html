@@ -190,6 +190,12 @@
             box-shadow: 0 2px 0px #10ac84;
         }
 
+        .btn-submit:disabled {
+            background: #95a5a6;
+            box-shadow: none;
+            cursor: not-allowed;
+        }
+
         .recap-section {
             margin-top: 30px;
         }
@@ -241,16 +247,6 @@
             font-size: 0.8rem;
             font-weight: bold;
         }
-
-        .star-reward {
-            font-size: 1.8rem;
-            animation: bounce 1s infinite alternate;
-        }
-
-        @keyframes bounce {
-            from { transform: translateY(0); }
-            to { transform: translateY(-5px); }
-        }
     </style>
 </head>
 <body>
@@ -277,14 +273,55 @@
                     <label for="namaAnak">👶 Nama Anak (Siswa):</label>
                     <select id="namaAnak" required>
                         <option value="">-- Pilih Nama Anak --</option>
-                        <option value="ABDULLAH ALFARISKY">ABDULLAH ALFARISKY</option><option value="AFNAN ZABIR PUTRA RUNA">AFNAN ZABIR PUTRA RUNA</option><option value="AKSYA DAFA PERMANA">AKSYA DAFA PERMANA</option><option value="ANNASYA ADREENA SAILA">ANNASYA ADREENA SAILA</option><option value="ANNINDITA KEISHA ALMAHYRA">ANNINDITA KEISHA ALMAHYRA</option><option value="ARYA DWI SAPUTRA">ARYA DWI SAPUTRA</option><option value="ASLAN NURDIANSYAH ANANDHI">ASLAN NURDIANSYAH ANANDHI</option><option value="AYYUB AL HATIM">AYYUB AL HATIM</option><option value="AZIZTA NAHLA KHOIRUNNISA">AZIZTA NAHLA KHOIRUNNISA</option><option value="CHAYRA ADZRA RASHAFAH">CHAYRA ADZRA RASHAFAH</option><option value="CLARISTA PUTRI FITRIANI">CLARISTA PUTRI FITRIANI</option><option value="DANNIZA ALBIGHANI TRIESTIAN">DANNIZA ALBIGHANI TRIESTIAN</option><option value="DHEFINDRA ALFARIZQI SUBAGIYO">DHEFINDRA ALFARIZQI SUBAGIYO</option><option value="FRIAN APRILIO JATI SUSANTO">FRIAN APRILIO JATI SUSANTO</option><option value="HASBI ALFARIZKI">HASBI ALFARIZKI</option><option value="KEISHA PUTRI ALMAYRA">KEISHA PUTRI ALMAYRA</option><option value="MUHAMMAD HAIDAR">MUHAMMAD HAIDAR</option><option value="NADIA AZZAHRA ALFATHUNNISA">NADIA AZZAHRA ALFATHUNNISA</option><option value="NADYA ALIYANA SHAIMA">NADYA ALIYANA SHAIMA</option><option value="NIRMALA SALSABILA">NIRMALA SALSABILA</option><option value="PRAVIS IZYAN DIRANDRA">PRAVIS IZYAN DIRANDRA</option><option value="PUTRI ANJELA ASYURA">PUTRI ANJELA ASYURA</option><option value="QUINSHA APRILLIA RAHMADHANI">QUINSHA APRILLIA RAHMADHANI</option><option value="RAFID ZHAFAR PRASTIYO">RAFID ZHAFAR PRASTIYO</option><option value="RAFKA FIAN SWASTIKA">RAFKA FIAN SWASTIKA</option><option value="RAHVANA JAGAD RINESTU">RAHVANA JAGAD RINESTU</option><option value="RAIHANAH">RAIHANAH</option><option value="RANIA ALISHA HARDIANTI">RANIA ALISHA HARDIANTI</option><option value="RASYA ATHAYA ALFARIZI">RASYA ATHAYA ALFARIZI</option><option value="SAMADYA SHADA SULTHANAH">SAMADYA SHADA SULTHANAH</option><option value="VINA DWI SAPUTRI">VINA DWI SAPUTRI</option><option value="VISHAKA NADHIFA PRAMUDANA">VISHAKA NADHIFA PRAMUDANA</option><option value="ZELINE SHAQUILLA AQUEENSYA">ZELINE SHAQUILLA AQUEENSYA</option><option value="ARGA ALVINO PRATAMA">ARGA ALVINO PRATAMA</option><option value="PUTRA SETIA WICAKSONO">PUTRA SETIA WICAKSONO</option><option value="ALSAKI NUR ARSYANENDRA ARDINNAT">ALSAKI NUR ARSYANENDRA ARDINNAT</option><option value="FAHMI ABDAD NUDIANSYAH">FAHMI ABDAD NUDIANSYAH</option>
+                        <option value="ABDULLAH ALFARISKY">ABDULLAH ALFARISKY</option>
+                        <option value="AFNAN ZABIR PUTRA RUNA">AFNAN ZABIR PUTRA RUNA</option>
+                        <option value="AKSYA DAFA PERMANA">AKSYA DAFA PERMANA</option>
+                        <option value="ANNASYA ADREENA SAILA">ANNASYA ADREENA SAILA</option>
+                        <option value="ANNINDITA KEISHA ALMAHYRA">ANNINDITA KEISHA ALMAHYRA</option>
+                        <option value="ARYA DWI SAPUTRA">ARYA DWI SAPUTRA</option>
+                        <option value="ASLAN NURDIANSYAH ANANDHI">ASLAN NURDIANSYAH ANANDHI</option>
+                        <option value="AYYUB AL HATIM">AYYUB AL HATIM</option>
+                        <option value="AZIZTA NAHLA KHOIRUNNISA">AZIZTA NAHLA KHOIRUNNISA</option>
+                        <option value="CHAYRA ADZRA RASHAFAH">CHAYRA ADZRA RASHAFAH</option>
+                        <option value="CLARISTA PUTRI FITRIANI">CLARISTA PUTRI FITRIANI</option>
+                        <option value="DANNIZA ALBIGHANI TRIESTIAN">DANNIZA ALBIGHANI TRIESTIAN</option>
+                        <option value="DHEFINDRA ALFARIZQI SUBAGIYO">DHEFINDRA ALFARIZQI SUBAGIYO</option>
+                        <option value="FRIAN APRILIO JATI SUSANTO">FRIAN APRILIO JATI SUSANTO</option>
+                        <option value="HASBI ALFARIZKI">HASBI ALFARIZKI</option>
+                        <option value="KEISHA PUTRI ALMAYRA">KEISHA PUTRI ALMAYRA</option>
+                        <option value="MUHAMMAD HAIDAR">MUHAMMAD HAIDAR</option>
+                        <option value="NADIA AZZAHRA ALFATHUNNISA">NADIA AZZAHRA ALFATHUNNISA</option>
+                        <option value="NADYA ALIYANA SHAIMA">NADYA ALIYANA SHAIMA</option>
+                        <option value="NIRMALA SALSABILA">NIRMALA SALSABILA</option>
+                        <option value="PRAVIS IZYAN DIRANDRA">PRAVIS IZYAN DIRANDRA</option>
+                        <option value="PUTRI ANJELA ASYURA">PUTRI ANJELA ASYURA</option>
+                        <option value="QUINSHA APRILLIA RAHMADHANI">QUINSHA APRILLIA RAHMADHANI</option>
+                        <option value="RAFID ZHAFAR PRASTIYO">RAFID ZHAFAR PRASTIYO</option>
+                        <option value="RAFKA FIAN SWASTIKA">RAFKA FIAN SWASTIKA</option>
+                        <option value="RAHVANA JAGAD RINESTU">RAHVANA JAGAD RINESTU</option>
+                        <option value="RAIHANAH">RAIHANAH</option>
+                        <option value="RANIA ALISHA HARDIANTI">RANIA ALISHA HARDIANTI</option>
+                        <option value="RASYA ATHAYA ALFARIZI">RASYA ATHAYA ALFARIZI</option>
+                        <option value="SAMADYA SHADA SULTHANAH">SAMADYA SHADA SULTHANAH</option>
+                        <option value="VINA DWI SAPUTRI">VINA DWI SAPUTRI</option>
+                        <option value="VISHAKA NADHIFA PRAMUDANA">VISHAKA NADHIFA PRAMUDANA</option>
+                        <option value="ZELINE SHAQUILLA AQUEENSYA">ZELINE SHAQUILLA AQUEENSYA</option>
+                        <option value="ARGA ALVINO PRATAMA">ARGA ALVINO PRATAMA</option>
+                        <option value="PUTRA SETIA WICAKSONO">PUTRA SETIA WICAKSONO</option>
+                        <option value="ALSAKI NUR ARSYANENDRA ARDINNAT">ALSAKI NUR ARSYANENDRA ARDINNAT</option>
+                        <option value="FAHMI ABDAD NUDIANSYAH">FAHMI ABDAD NUDIANSYAH</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="pendamping">👨‍🏫 Guru / Pendamping:</label>
                     <select id="pendamping" required>
                         <option value="">-- Pilih Penilai / Pendamping --</option>
-                        <option value="Arwanto H.S.">Arwanto H.S.</option><option value="Isti Purwaningsih">Isti Purwaningsih</option><option value="Yulia Indah H.">Yulia Indah H.</option><option value="Tri Kusumarani">Tri Kusumarani</option><option value="Lina Ernawati">Lina Ernawati</option><option value="Orangtua / Wali">Orangtua / Wali</option>
+                        <option value="Arwanto H.S.">Arwanto H.S.</option>
+                        <option value="Isti Purwaningsih">Isti Purwaningsih</option>
+                        <option value="Yulia Indah H.">Yulia Indah H.</option>
+                        <option value="Tri Kusumarani">Tri Kusumarani</option>
+                        <option value="Lina Ernawati">Lina Ernawati</option>
+                        <option value="Orangtua / Wali">Orangtua / Wali</option>
                     </select>
                 </div>
             </div>
@@ -388,7 +425,7 @@
             </div>
             <div class="checklist-grid">
                 <label class="check-item" style="grid-column: 1 / -1;">
-                    <input type="checkbox" name="hormat" value="Menghormati Orang Tua (Patuh, Bicara Sopan, & Membantu)">
+                    <input type="checkbox" name="hormat" value="Menghormati Orang Tua">
                     <span class="icon">👨‍👩‍👧‍👦</span> Menghormati & Patuh Kepada Orang Tua Hari Ini
                 </label>
             </div>
@@ -402,7 +439,7 @@
     <div class="recap-section">
         <div class="card" style="border-color: #5f27cd;">
             <div class="card-header-title" style="justify-content: space-between;">
-                <span>📋 Data Kebaikan Tersimpan</span>
+                <span>📋 Data Kebaikan Tersimpan (Lokal)</span>
                 <span class="badge badge-count" id="totalCount">0 Catatan</span>
             </div>
             <div id="recapList">
@@ -413,10 +450,13 @@
 </div>
 
 <script>
-    // Set default date to today
+    // URL Web App Apps Script milik Anda
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxh7EEGXFkhkH-YI6A4Ev6_BK61DitZ8_xqGYDq0mlgJYdLApYTsmgYT-aL4j4AqJK_yw/exec";
+
+    // Set tanggal default ke hari ini
     document.getElementById('tanggal').valueAsDate = new Date();
 
-    // Toggle active style on checkbox check
+    // Toggle tampilan checkbox aktif
     document.querySelectorAll('.check-item input').forEach(input => {
         input.addEventListener('change', function() {
             if(this.checked) {
@@ -431,7 +471,7 @@
     const recapList = document.getElementById('recapList');
     const totalCount = document.getElementById('totalCount');
 
-    // Load data from localStorage
+    // Tampilkan data dari localStorage
     function loadRecords() {
         const records = JSON.parse(localStorage.getItem('catatan_jibril_data')) || [];
         totalCount.textContent = `${records.length} Catatan`;
@@ -446,16 +486,19 @@
             const card = document.createElement('div');
             card.className = 'recap-card';
             
-            const countGood = record.sholat.length + record.mandiri.length + record.sosial.length + (record.hormat ? 1 : 0);
+            const countGood = (record.sholat ? record.sholat.length : 0) + 
+                              (record.mandiri ? record.mandiri.length : 0) + 
+                              (record.sosial ? record.sosial.length : 0) + 
+                              (record.hormat ? 1 : 0);
             
             card.innerHTML = `
                 <div class="recap-info">
                     <h4>⭐ ${record.namaAnak}</h4>
                     <p><strong>Tanggal:</strong> ${record.tanggal} | <strong>Pendamping:</strong> ${record.pendamping}</p>
                     <p style="margin-top: 5px;">
-                        <strong>Sholat:</strong> ${record.sholat.join(', ') || '-'}<br>
-                        <strong>Kemandirian:</strong> ${record.mandiri.join(', ') || '-'}<br>
-                        <strong>Jiwa Sosial:</strong> ${record.sosial.join(', ') || '-'}<br>
+                        <strong>Sholat:</strong> ${Array.isArray(record.sholat) ? record.sholat.join(', ') : record.sholat}<br>
+                        <strong>Kemandirian:</strong> ${Array.isArray(record.mandiri) ? record.mandiri.join(', ') : record.mandiri}<br>
+                        <strong>Jiwa Sosial:</strong> ${Array.isArray(record.sosial) ? record.sosial.join(', ') : record.sosial}<br>
                         <strong>Hormat Ortu:</strong> ${record.hormat ? 'Ya ✅' : 'Tidak'}
                     </p>
                 </div>
@@ -468,42 +511,75 @@
         });
     }
 
-    // Save record
+    // Simpan ke Google Sheets & localStorage
     form.addEventListener('submit', function(e) {
         e.preventDefault();
+
+        const submitBtn = form.querySelector('button[type="submit"]');
+        submitBtn.disabled = true;
+        submitBtn.textContent = '⏳ Mengirim Data ke Spreadsheet...';
 
         const sholatChecked = Array.from(document.querySelectorAll('input[name="sholat"]:checked')).map(el => el.value);
         const mandiriChecked = Array.from(document.querySelectorAll('input[name="mandiri"]:checked')).map(el => el.value);
         const sosialChecked = Array.from(document.querySelectorAll('input[name="sosial"]:checked')).map(el => el.value);
         const hormatChecked = document.querySelector('input[name="hormat"]:checked') !== null;
 
-        const newRecord = {
+        // Data untuk dikirim ke Google Sheets
+        const payload = {
             tanggal: document.getElementById('tanggal').value,
             namaAnak: document.getElementById('namaAnak').value,
             pendamping: document.getElementById('pendamping').value,
-            sholat: sholatChecked,
-            mandiri: mandiriChecked,
-            sosial: sosialChecked,
-            hormat: hormatChecked,
-            timestamp: new Date().getTime()
+            sholat: sholatChecked.join(', ') || '-',
+            mandiri: mandiriChecked.join(', ') || '-',
+            sosial: sosialChecked.join(', ') || '-',
+            hormat: hormatChecked ? 'Ya' : 'Tidak'
         };
 
-        const records = JSON.parse(localStorage.getItem('catatan_jibril_data')) || [];
-        records.unshift(newRecord);
-        localStorage.setItem('catatan_jibril_data', JSON.stringify(records));
+        // Kirim ke Google Sheets
+        fetch(SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        })
+        .then(() => {
+            // Simpan juga ke localStorage HP
+            const newRecord = {
+                tanggal: payload.tanggal,
+                namaAnak: payload.namaAnak,
+                pendamping: payload.pendamping,
+                sholat: sholatChecked,
+                mandiri: mandiriChecked,
+                sosial: sosialChecked,
+                hormat: hormatChecked,
+                timestamp: new Date().getTime()
+            };
 
-        // Reset form controls
-        form.reset();
-        document.querySelectorAll('.check-item').forEach(el => el.classList.remove('active'));
-        document.getElementById('tanggal').valueAsDate = new Date();
+            const records = JSON.parse(localStorage.getItem('catatan_jibril_data')) || [];
+            records.unshift(newRecord);
+            localStorage.setItem('catatan_jibril_data', JSON.stringify(records));
 
-        alert('🌟 Masya Allah! Catatan kebaikan berhasil disimpan.');
-        loadRecords();
+            alert('🌟 Masya Allah! Catatan kebaikan berhasil dikirim ke Google Sheets dan disimpan.');
+            
+            // Reset form
+            form.reset();
+            document.querySelectorAll('.check-item').forEach(el => el.classList.remove('active'));
+            document.getElementById('tanggal').valueAsDate = new Date();
+            loadRecords();
+        })
+        .catch(error => {
+            alert('❌ Terjadi kesalahan saat mengirim data.');
+            console.error('Error:', error);
+        })
+        .finally(() => {
+            submitBtn.disabled = false;
+            submitBtn.textContent = '🌟 SIMPAN CATATAN KEBAIKAN 🌟';
+        });
     });
 
-    // Delete record
+    // Hapus rekap lokal
     function deleteRecord(index) {
-        if (confirm('Apakah Anda yakin ingin menghapus catatan kebaikan ini?')) {
+        if (confirm('Apakah Anda yakin ingin menghapus catatan lokal ini?')) {
             const records = JSON.parse(localStorage.getItem('catatan_jibril_data')) || [];
             records.splice(index, 1);
             localStorage.setItem('catatan_jibril_data', JSON.stringify(records));
@@ -511,7 +587,7 @@
         }
     }
 
-    // Initial load
+    // Jalankan saat pertama kali dibuka
     loadRecords();
 </script>
 
